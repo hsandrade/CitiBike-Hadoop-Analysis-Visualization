@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Top 5 Trip Ranges</title>
+    <link rel="stylesheet" href="citibike.css">
+</head>
+<body>
+	<div id="map-canvas"></div>
+		<div id="right">
+			<div id="info">
+				<center>
+					<h2>Top 5 Trip Ranges</h2>
+			
+					<p>This visualization displays, for each day of the month in April 2014, the CitiBike trips with the largest difference between outgoing trips and incoming trips. For instance, all trips from station A to station B are counted, then those from B to A are counted, and the difference of these two numbers is defined as the trip's balance. Hence, this visualization displays the trips with the largest balance in absolute value. A negative balance means there are more trips from station B to station A.
+
+					<br><br>Pick a date to display the top 5 trips with the largest range of number of trips.
+					</p>
+					
+					<input type="date" id="datePicker" min="2014-04-01" max="2014-04-30" value="2014-04-01">
+					<button id="update">Update</button>
+					<br>
+					<h4 id="date_text"></h4>
+					<p>Station A -- Station B   Balance</p> 
+					<p id="date_info"></p>
+				</center>
+			</div>
+		</div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+	<script src="citibike.js"></script>
+	<script>
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+</body>
+</html>
